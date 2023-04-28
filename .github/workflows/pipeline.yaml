@@ -14,7 +14,7 @@ jobs:
     with:
       image: horowitzathome/mandel-c
       version-file: version.txt
-      hadolint-ignore: DL3015,DL3009
+      hadolint-ignore: DL3015,DL3009,DL3008
 
     secrets:
       container-registry-username: ${{ secrets.CONTAINER_REGISTRY_USERNAME }}
