@@ -1,0 +1,19 @@
+name: Pipeline
+
+permissions:
+  contents: "write"
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    uses: horowitzathome/rust-workflows/.github/workflows/build_java.yaml@main
+    with:
+      image: horowitzathome/mandel-c
+      version-file: version.txt
+    secrets:
+      container-registry-username: ${{ secrets.CONTAINER_REGISTRY_USERNAME }}
+      container-registry-password: ${{ secrets.CONTAINER_REGISTRY_PASSWORD }}
